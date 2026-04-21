@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>  
+	<main>
+		<section class="hero">
+			<div class="hero-content">
+				<h1>Sfidiamo i limiti della velocità umana</h1>
+				<p>Progettiamo e realizziamo prototipi ad alta efficienza per competizioni internazionali.</p>
+				<a href="/prototypes" class="cta-button">Scopri i nostri prototipi</a>
+			</div>
+		</section>
+
+	</main>
+</Layout>
+
+<style>
+  /* Stili specifici per la Home Page */
+  main {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+	color: #F4F7ED;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+</style>

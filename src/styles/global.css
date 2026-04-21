@@ -1,0 +1,96 @@
+/* global.css */
+:root {
+    --header-bg: rgba(37, 37, 37, 0.6); /* #252525 al 40% */
+    --header-border: #000000;
+    --bg-color: #252525; /* Grigio scuro dello sfondo */
+    --text-color: #F4F7ED; /* Bianco */
+    --btn-color: #A8C81E; /* Verde del pulsante */
+    --btn-text: #F4F7ED;
+    --font-inter: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+body {
+    margin: 0;
+    padding-top: 100px;
+  
+    font-family: var(--font-inter);
+  
+    /* Feature CSS specifiche per Inter per renderlo più simile al "Display" di Figma */
+    font-feature-settings: 'cv02', 'cv03', 'cv04'; 
+    letter-spacing: -0.02em; /* Inter Display solitamente ha una spaziatura più stretta */
+
+    background-color: #252525;
+}
+
+.main-header {
+  position: fixed;
+  top: 15px; /* Staccato 20px dall'alto */
+  left: 25px; /* Staccato 35px da sinistra */
+  right: 25px; /* Staccato 35px da destra */
+  z-index: 1000; /* Assicura che stia sopra tutto */
+  
+  /* Stile "Isola Flottante" */
+  background-color: var(--header-bg);
+  border: 3px solid var(--header-border);
+  border-radius: 22px; /* Arrotondamento per l'effetto isola */
+  
+  /* Effetto sfocato e trasparenza */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); /* Per compatibilità Safari */
+  
+  padding: 15px 30px; /* Padding interno */
+  box-sizing: border-box; /* Assicura che il padding non aumenti la larghezza */
+
+  font-family: 'Inter var', sans-serif;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 45px; /* Regola l'altezza in base al tuo logo */
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px; /* Spazio tra tutti gli elementi */
+  align-items: center; /* Allinea verticalmente il testo e il pulsante */
+}
+
+.nav-links a:not(.btn-contacts) {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.btn-contacts {
+  background-color: var(--btn-color);
+  color: var(--btn-text);
+  padding: 5px 20px;
+  border-radius: 5px; /* Arrotondamento più marcato simile all'immagine */
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+	color: #F4F7ED;
+  }
