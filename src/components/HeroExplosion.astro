@@ -1,0 +1,161 @@
+---
+/* src/components/HeroExplosion.astro */
+---
+
+<div class="hero-section">
+  <div class="hero-container">
+    <img src="/Pegasus_Rndr_Sfondo.png" class="layer bg" alt="Background" data-desktop="/Pegasus_Rndr_Sfondo.png" data-mobile="/Pegasus_Rndr_Sfondo-Vert.png" />
+    
+    <img src="/Pegasus_Rndr_CodinoDX.png" class="layer codino-dx move-left z-front" alt="Codino DX" data-desktop="/Pegasus_Rndr_CodinoDX.png" data-mobile="/Pegasus_Rndr_CodinoDX-Vert.png" />
+    <img src="/Pegasus_Rndr_CarenaDX.png" class="layer carena-dx move-right z-front" alt="Carena DX" data-desktop="/Pegasus_Rndr_CarenaDX.png" data-mobile="/Pegasus_Rndr_CarenaDX-Vert.png" />
+    
+    <img src="/Pegasus_Rndr_Chassis.png" class="layer chassis" alt="Chassis" data-desktop="/Pegasus_Rndr_Chassis.png" data-mobile="/Pegasus_Rndr_Chassis-Vert.png" />
+    
+    <img src="/Pegasus_Rndr_CodinoSX.png" class="layer codino-sx move-left z-behind" alt="Codino SX" data-desktop="/Pegasus_Rndr_CodinoSX.png" data-mobile="/Pegasus_Rndr_CodinoSX-Vert.png" />
+    <img src="/Pegasus_Rndr_CarenaSX.png" class="layer carena-sx move-right z-behind" alt="Carena SX" data-desktop="/Pegasus_Rndr_CarenaSX.png" data-mobile="/Pegasus_Rndr_CarenaSX-Vert.png" />
+  </div>
+</div>
+
+<style>
+  .hero-section {
+    position: relative;
+    width: 100%;
+    height: 250vh;
+    margin: 0;
+    padding: 0;
+    background: #000;
+    /*overflow: hidden;*/
+    box-sizing: border-box;
+  }
+
+  .hero-container {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      height: 100vh;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+  }
+
+  .layer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    will-change: transform;
+    display: block;
+    pointer-events: none;
+  }
+
+  /* Background image */
+  .bg {
+    z-index: 1;
+    transform: translateX(-50%) !important;
+  }
+
+  .chassis {
+    z-index: 3;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Moving layers */
+  .z-behind {
+    z-index: 2;
+  }
+
+  .z-front {
+    z-index: 4;
+  }
+</style>
+
+<script>
+  // 1. Add Type Casting (HTMLDivElement) so TypeScript knows offsetHeight exists
+  const heroSection = document.querySelector('.hero-section') as HTMLDivElement;
+  const heroContainer = document.querySelector('.hero-container') as HTMLDivElement;
+  const movingElements = document.querySelectorAll('.move-left, .move-right');
+  const allImages = document.querySelectorAll('.layer');
+  
+  let maxDistance = 0;
+
+  function calculateMaxDistance() {
+    // 2. Use Optional Chaining (?.) to prevent "null" errors
+    const containerWidth = heroContainer?.offsetWidth || window.innerWidth;
+    maxDistance = containerWidth / 2 + 200; 
+  }
+
+  function handleScroll() {
+    // 3. Guard Clause: If elements aren't found, exit early
+    if (!heroSection || !heroContainer) return;
+
+    const rect = heroSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    
+    // Calculate total distance available to scroll
+    const totalScrollableHeight = heroSection.offsetHeight - windowHeight;
+    
+    // If the section is above the view, currentScroll will be positive
+    const currentScroll = -rect.top;
+
+    // Calculate progress (0 to 1)
+    let progress = currentScroll / totalScrollableHeight;
+    progress = Math.max(0, Math.min(1, progress));
+
+    movingElements.forEach((element) => {
+      // 4. Cast element to HTMLElement to access .style
+      const el = element as HTMLElement;
+      const moveDistance = progress * maxDistance;
+      
+      if (el.classList.contains('move-left')) {
+        el.style.transform = `translateX(calc(-50% - ${moveDistance}px))`;
+      } else if (el.classList.contains('move-right')) {
+        el.style.transform = `translateX(calc(-50% + ${moveDistance}px))`;
+      }
+    });
+  }
+
+  // --- Image Swapping Logic ---
+  function swapImages() {
+    const isMobileOrTablet = window.innerWidth <= 1024;
+    
+    allImages.forEach((img) => {
+      const image = img as HTMLImageElement;
+      const desktopSrc = image.dataset.desktop;
+      const mobileSrc = image.dataset.mobile;
+      
+      if (isMobileOrTablet && mobileSrc) {
+        image.src = mobileSrc;
+      } else if (!isMobileOrTablet && desktopSrc) {
+        image.src = desktopSrc;
+      }
+    });
+  }
+
+  // --- Initialize ---
+  swapImages();
+  calculateMaxDistance();
+  
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('resize', () => {
+    swapImages();
+    calculateMaxDistance();
+    handleScroll();
+  });
+
+  // Initial run to set positions
+  handleScroll();
+</script>
+

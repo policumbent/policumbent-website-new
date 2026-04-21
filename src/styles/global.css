@@ -17,7 +17,7 @@
 
 body {
     margin: 0;
-    padding-top: 100px;
+    padding-top: 0;
   
     font-family: var(--font-inter);
   
@@ -94,3 +94,27 @@ h1 {
     text-transform: uppercase;
 	color: #F4F7ED;
   }
+
+@media (max-width: 768px) {
+  .main-header {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px solid var(--header-border);
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links a:not(.btn-contacts) {
+    font-size: 12px;
+  }
+
+  .btn-contacts {
+    font-size: 12px;
+    padding: 4px 15px;
+  }
+}
