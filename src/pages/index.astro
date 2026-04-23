@@ -10,9 +10,49 @@ import HeroExplosion from '../components/HeroExplosion.astro';
   <main>
     <HeroExplosion />
 
-    <section class="content">
+    <section class="title-section">
       <h1>We build the fastest bikes in the world.</h1>
     </section>
+
+    <section class="page-content">
+      <div class="content-container">
+        <div class="content-text">
+          <h2 style="color: #C4EC17">Who are we?</h2>
+          <p>
+            We are a Student Team from <strong>Politecnico di Torino</strong> born in 2009.
+          </br></br>
+            We <em>design and build high-performance recumbent bicycles</em>
+            and compete in <strong>international races,</strong> pushing the limits of human-powered vehicles.
+          </p>
+        </div>
+        <div class="content-image">
+          <img src="/Cerberus_HomePage.png" alt="Cerberus, Nevada 2024" />
+        </div>
+      </div>
+    </section>
+
+    <!-- *UNDER CONSTRUCTION* - Uncomment when ready
+    <section class="page-content">
+      <h1>Our fastest bicycle for each category:</h1>
+    </section>
+
+    TODO: insert record cards
+
+    <section class="page-content">
+      <div class="content-container">
+        <div class="content-image">
+          <img src="/Pegasus_Mesh.svg" alt="Meshed Pegasus fairing" />
+        </div>
+        <div class="content-text">
+          <h2 style="color: #C4EC17">We are not done yet.</h2>
+          <p>
+            <strong>The challenge</strong> for the absolute <em>World Speed Record</em> for a human-powered vehicle
+            <strong>is still on: our next goal is set.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+    -->
   </main>
 </Layout>
 
@@ -62,15 +102,63 @@ import HeroExplosion from '../components/HeroExplosion.astro';
     min-height: 100vh;
   }
 
-  .content h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #F4F7ED;
+  .page-content {
+    padding: 60px 30px;
+    background-color: #252525;
   }
 
-  .content p {
-    font-size: 1rem;
-    color: #F4F7ED;
+  .content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content-text h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+  }
+
+  .content-text p {
+    font-size: 16px;
     line-height: 1.6;
+    color: var(--text-color);
+  }
+
+  .content-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .content-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      order: 1;
+    }
+
+    .content-image {
+      order: -1;
+    }
+
+    .content-text h2 {
+      font-size: 32px;
+    }
+
+    .content-text p {
+      font-size: 14px;
+    }
   }
 </style>
