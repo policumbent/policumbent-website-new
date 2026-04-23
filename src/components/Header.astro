@@ -9,7 +9,13 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
     <img src={logo.src} height=40% alt="Policumbent Logo" />
     </a>
     
-    <nav class="nav-links">
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="nav-links" id="nav-menu">
       <a href="/wip">TEAM</a>
       <a href="/wip">BLOG</a>
       <a href="/wip">PROTOTYPES</a>
@@ -19,3 +25,24 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
     </nav>
   </div>
 </header>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      hamburgerBtn.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
+      });
+    });
+  }
+</script>
