@@ -117,7 +117,7 @@ body {
 }
 
 .btn-contacts:hover {
-  background-color: var(#000000);
+  background-color: #000000;
   transition: background-color 0.3s ease;
   color: var(--btn-text);
   padding: 5px 20px;
