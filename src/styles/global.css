@@ -116,6 +116,18 @@ body {
   font-size: 16px;
 }
 
+.btn-contacts:hover {
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+  color: var(--btn-text);
+  padding: 5px 20px;
+  border-radius: 5px; /* Arrotondamento più marcato simile all'immagine */
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
 
 .title-section {
   position: relative;
@@ -158,6 +170,16 @@ p {
 em {
   font-style: italic;
   color: #C4EC17;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--btn-color);
 }
 
 img {
