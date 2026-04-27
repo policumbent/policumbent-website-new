@@ -1,0 +1,173 @@
+---
+// Footer.astro
+import logo from '../assets/LogoPolicumbent_Wht.svg';
+---
+
+<footer class="main-footer">
+  <div class="footer-container">
+    <!-- Top Section: Logos and Social Links -->
+    <div class="footer-top">
+      <div class="footer-left">
+        <div class="logos-section">
+            <a href="/">
+              <img class="footer-logo" src={logo.src} alt="Policumbent Logo" />
+            </a>
+          <div class="vertical-bar"></div>
+          <a href="https://www.polito.it" target="_blank" rel="noopener noreferrer">
+            <img class="polito-footer-logo" src="/PoliTO-Hor-WHT.svg" alt="PoliTO Logo" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Section: Social Links -->
+      <div class="footer-right">
+        <a href="https://instagram.com/policumbent" target="_blank" rel="noopener noreferrer" class="social-link">
+          <span>Instagram</span>
+        </a>
+        <a href="https://linkedin.com/company/policumbent" target="_blank" rel="noopener noreferrer" class="social-link">
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://youtube.com/@policumbent" target="_blank" rel="noopener noreferrer" class="social-link">
+          <span>YouTube</span>
+        </a>
+        <a href="https://github.com/policumbent" target="_blank" rel="noopener noreferrer" class="social-link">
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom Section: Tagline -->
+    <div class="footer-bottom">
+      <p>A <em><a href="https://www.polito.it" target="_blank" rel="noopener noreferrer">Politecnico di Torino</a></em>
+        student Team — Striving for speed, since 2009</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .main-footer {
+    background-color: #252525;
+    padding: 40px 30px;
+    box-sizing: border-box;
+    font-family: 'Inter var', sans-serif;
+    border-top: 3px solid #000000;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .logos-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .footer-logo {
+    height: 40px;
+    width: auto;
+    border-radius: 0;
+  }
+
+  .polito-footer-logo {
+    height: 60px;
+    width: auto;
+    border-radius: 0;
+  }
+
+  .vertical-bar {
+    width: 1px;
+    height: 50px;
+    background-color: var(--text-color);
+  }
+
+  .footer-right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .social-link {
+    color: var(--text-color);
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .social-link:hover {
+    color: var(--btn-color);
+  }
+
+  .footer-bottom {
+    width: 100%;
+  }
+
+  .footer-bottom p {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+
+  .footer-bottom a {
+    color: var(--text-color);
+    text-decoration: underline;
+  }
+
+  .footer-bottom a:hover {
+    color: var(--btn-color);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .main-footer {
+      padding: 30px 20px;
+    }
+
+    .footer-top {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .footer-right {
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-logo {
+      height: 32px;
+      width: auto;
+    }
+
+    .polito-footer-logo {
+      height: 48px;
+      width: auto;
+    }
+
+    .vertical-bar {
+      height: 32px;
+    }
+  }
+</style>
