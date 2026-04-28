@@ -46,3 +46,211 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
     });
   }
 </script>
+
+<style>
+  .main-header {
+    position: fixed;
+    top: 15px; /* Staccato 20px dall'alto */
+    left: 25px; /* Staccato 35px da sinistra */
+    right: 25px; /* Staccato 35px da destra */
+    z-index: 1000; /* Assicura che stia sopra tutto */
+    
+    /* Stile "Isola Flottante" */
+    background-color: rgba(37, 37, 37, 0.6);
+    border: 3px solid #000000;
+    border-radius: 22px; /* Arrotondamento per l'effetto isola */
+    
+    /* Effetto sfocato e trasparenza */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px); /* Per compatibilità Safari */
+    
+    padding: 15px 30px; /* Padding interno */
+    box-sizing: border-box; /* Assicura che il padding non aumenti la larghezza */
+
+    font-family: 'Inter var', sans-serif;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .logo {
+    height: 45px;
+    width: auto;
+    border-radius: 0;
+  }
+
+  .logo img {
+    height: 45px; /* Regola l'altezza in base al tuo logo */
+    width: auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px; /* Spazio tra tutti gli elementi */
+    align-items: center; /* Allinea verticalmente il testo e il pulsante */
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links a:not(.btn-contacts) {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  .btn-contacts {
+    background-color: var(--btn-color);
+    color: var(--btn-text);
+    padding: 5px 20px;
+    border-radius: 5px; /* Arrotondamento più marcato simile all'immagine */
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-contacts:hover {
+    background-color: #000000;
+    color: var(--btn-text);
+  }
+
+  /* Desktop - hamburger is hidden */
+  @media (min-width: 920px) {
+    .hamburger {
+      display: none !important;
+    }
+    
+    .nav-links {
+      display: flex !important;
+    }
+  }
+
+  /* Mobile - hamburger menu */
+  @media (max-width: 920px) {
+    .main-header {
+      min-height: 65px;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      border-radius: 15px;
+      border: 2px solid #000000;
+      position: fixed;
+    }
+
+    .header-container {
+      position: relative;
+    }
+
+    .logo {
+      padding: 1px;
+      height: 40px;
+      vertical-align: center;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translateY(13px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-13px);
+    }
+
+    .nav-links {
+      position: fixed;
+      top: calc(10px + 10px + 20px + 1.5rem + 17px); /* header top + padding + height + gap from header */
+      left: -1px;
+      right: -1px;
+      flex-direction: column;
+      gap: 0;
+      background-color: #252525ee;
+      
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px); /* Per compatibilità Safari */
+
+      border: 2px solid #000000;
+      border-radius: 15px;
+      padding: 15px;
+      display: none;
+      animation: slideDown 0.3s ease-out forwards;
+      z-index: 999;
+      box-sizing: border-box;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-links a {
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(244, 247, 237, 0.1);
+      display: block;
+    }
+
+    .nav-links a:last-of-type {
+      border-bottom: none;
+    }
+
+    .nav-links a:not(.btn-contacts) {
+      font-size: 14px;
+      padding: 15px 20px !important;
+    }
+
+    .btn-contacts {
+      font-size: 14px;
+      padding: 10px 20px !important;
+      display: block;
+      text-align: center;
+      background-color: var(--btn-color);
+      margin: 0;
+      border-radius: 5px;
+      margin-top: 17px;
+    }
+  }
+</style>

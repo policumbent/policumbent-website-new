@@ -3,76 +3,16 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-  <main class="wip-container">
-    <div class="wip-content">
-      <h1>Coming Soon</h1>
-      <p>This page is currently under construction. Check back soon!</p>
-      <a href="/" class="back-link">Back to Home</a>
-    </div>
+  <main>
+    <section class="top-title-section">
+      <h1>The Team</h1>
+    </section>
+
+    <section class="page-content">
+        <div class="content-text">
+          
+        </div>
+    </section>  
   </main>
 </Layout>
 
-<style>
-  .wip-container {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #252525;
-    padding: 0;
-    margin: 0;
-  }
-
-  .wip-content {
-    text-align: center;
-    padding: 40px 20px;
-    max-width: 600px;
-  }
-
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: #F4F7ED;
-  }
-
-  p {
-    font-size: 1.2rem;
-    color: #F4F7ED;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-
-  .back-link {
-    display: inline-block;
-    background-color: var(--btn-color);
-    color: var(--btn-text);
-    padding: 12px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: opacity 0.3s ease;
-  }
-
-  .back-link:hover {
-    opacity: 0.8;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-
-    .wip-content {
-      padding: 30px 15px;
-    }
-  }
-</style>
