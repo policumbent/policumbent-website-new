@@ -57,11 +57,21 @@ main {
 
 .top-title-section img {
   width: 100%;
-  height: 500px;  /* or whatever height you want */
+  height: 700px;  /* or whatever height you want */
   object-fit: cover;
   object-position: center 50%;  /* shifts the image to show less of top/bottom */
   display: block;
   border-radius: 15px;
+}
+
+@media (max-width: 1200px) {
+  .top-title-section img {
+    height: 550px;  /* or whatever height you want */
+    object-fit: cover;
+    object-position: center 50%;  /* shifts the image to show less of top/bottom */
+    display: block;
+    border-radius: 15px;
+  }
 }
 
 .top-title-section h1 {
