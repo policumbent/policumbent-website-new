@@ -118,6 +118,29 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
     font-weight: 500;
     font-size: 16px;
     text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:not(.btn-contacts)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-color);
+  }
+
+  .nav-links a:not(.btn-contacts):hover::after {
+    transform: scaleX(1);
   }
 
   .btn-contacts {
