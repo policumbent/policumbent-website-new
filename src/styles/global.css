@@ -191,13 +191,13 @@ img {
   }
 
   h1 {
-    font-size: 52px;
-    line-height: 54px;
+    font-size: 48px;
+    line-height: 52px;
   }
 
   h2 {
-    font-size: 36px;
-    line-height: 34px;
+    font-size: 40px;
+    line-height: 42px;
   }
 
   p {
@@ -205,7 +205,7 @@ img {
   }
 
   .content-text h2 {
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 800;
     margin-bottom: 20px;
     letter-spacing: -2px;
