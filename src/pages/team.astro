@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProfileCard from '../components/ProfileCard.astro';
 ---
 
 <Layout>
@@ -26,31 +27,346 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <!--
     <section class="members">
       <h1>Our members and divisions</h1>
 
+      <h2>Board</h2>
       <section class="division">
-        <h2>Board</h2>
+        <ProfileCard
+          image="/ProfileCard/DanieleBecchero.jpg"
+          firstName="Daniele"
+          lastName="Becchero"
+          role="Team Leader"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/danielebecchero/" }
+          ]}
+        />
 
-        <h2>Cyclists</h2>
+        <ProfileCard
+          image="/ProfileCard/MarioTarantino.jpg"
+          firstName="Mario"
+          lastName="Tarantino"
+          role="Project Manager Pegasus"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/mario-tarantino-305212307/" }
+          ]}
+        />
 
-        <h2>Mechanics & Structures</h2>
+        <ProfileCard
+          image="/ProfileCard/PaoloBorgna.jpeg"
+          firstName="Paolo"
+          lastName="Borgna"
+          role="Project Manager Cerberus"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/paolo-borgna-b232b6212/" }
+          ]}
+        />
 
-        <h2>Aerodynamics</h2>
+        <ProfileCard
+          image="/ProfileCard/DanieleMita.jpg"
+          firstName="Daniele"
+          lastName="Mita"
+          role="Co-Head of Mechanics & Structures"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/daniele-mita-67b678245/" }
+          ]}
+        />
 
-        <h2>Electronics & IT</h2>
+        <ProfileCard
+          image="/ProfileCard/AndreaMarano.jpg"
+          firstName="Andrea"
+          lastName="Marano"
+          role="Co-Head of Mechanics & Structures"
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/RiccardoBuzzi.jpg"
+          firstName="Riccardo"
+          lastName="Buzzi"
+          role="Co-Head of Aerodynamics"
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/SimoneViola.jpg"
+          firstName="Simone"
+          lastName="Viola"
+          role="Head of Electronics"
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/FrancescoImparato.jpg"
+          firstName="Francesco"
+          lastName="Imparato"
+          role="Head of PR & Media"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/fra-imparato/" }
+          ]}
+        />
+      </section>
+
+      <!-- -- CYCLISTS -- -->
+      <h2>Cyclists</h2>
+      <section class="division">
+
+      </section>
+
+      <!-- -- MECHANICS & STRUCTURES -- -->
+      <h2>Mechanics & Structures</h2>
+      <section class="division">
+        <ProfileCard
+          image="/ProfileCard/DanieleMita.jpg"
+          firstName="Daniele"
+          lastName="Mita"
+          role="Co-Head of Mechanics & Structures"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/daniele-mita-67b678245/" }
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/AndreaMarano.jpg"
+          firstName="Andrea"
+          lastName="Marano"
+          role="Co-Head of Mechanics & Structures"
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/MarioTarantino.jpg"
+          firstName="Mario"
+          lastName="Tarantino"
+          role="Project Manager Pegasus"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/mario-tarantino-305212307/" }
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/SimoneZito.jpeg"
+          firstName="Simone"
+          lastName="Zito"
+          role="Former Project Manager Pegasus"
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/AlessandraNotarfrancesco.jpg"
+          firstName="Alessandra"
+          lastName="Notarfrancesco"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/AlessioObertaPaget.jpg"
+          firstName="Alessio"
+          lastName="Oberta Paget"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/AntonioDeCiccio.jpg"
+          firstName="Antonio"
+          lastName="De Ciccio"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/DomenicoVaccaro.jpg"
+          firstName="Domenico"
+          lastName="Vaccaro"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/MarcoRe.jpg"
+          firstName="Marco"
+          lastName="Re"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/PedroFonseca.jpg"
+          firstName="Pedro Henrique"
+          lastName="Morais Fonseca"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/SofiaLubatti.jpg"
+          firstName="Sofia"
+          lastName="Lubatti"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/TommasoRicciuti.jpg"
+          firstName="Tommaso"
+          lastName="Ricciuti"
+          role=""
+          socials={[
+          ]}
+        />
+      </section>
+
+      <!-- -- AERODYNAMICS -- -->
+      <h2>Aerodynamics</h2>
+      <section class="division">
+        <ProfileCard
+          image="/ProfileCard/RiccardoBuzzi.jpg"
+          firstName="Riccardo"
+          lastName="Buzzi"
+          role="Co-Head of Aerodynamics"
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/StefanoBucaria.jpg"
+          firstName="Stefano"
+          lastName="Bucaria"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/AndreaBidoli.jpg"
+          firstName="Andrea"
+          lastName="Bidoli"
+          role=""
+          socials={[
+          ]}
+        />
+      </section>
+
+      <!-- -- ELECTRONICS & IT -- -->
+      <h2>Electronics & IT</h2>
+      <section class="division">
+        <ProfileCard
+          image="/ProfileCard/SimoneViola.jpg"
+          firstName="Simone"
+          lastName="Viola"
+          role="Head of Electronics"
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/DanieleBecchero.jpg"
+          firstName="Daniele"
+          lastName="Becchero"
+          role="Team Leader"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/danielebecchero/" }
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/AlessandroFelicetti.jpeg"
+          firstName="Alessandro"
+          lastName="Felicetti"
+          role=""
+          socials={[
+          ]}
+        />
+
+        <ProfileCard
+          image="/ProfileCard/WilliamHusanu.jpg"
+          firstName="William Marius"
+          lastName="Husanu"
+          role=""
+          socials={[
+          ]}
+         />
+      </section>
+
+      <!-- -- BIOMEDICS -- -->
+      <h2>Biomedics</h2>
+      <section class="division">
+        <ProfileCard
+          image="/ProfileCard/PaoloBorgna.jpeg"
+          firstName="Paolo"
+          lastName="Borgna"
+          role="Project Manager Cerberus"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/paolo-borgna-b232b6212/" }
+          ]}
+        />
         
-        <h2>Biomedics</h2>
+      </section>
 
-        <h2>Data Analysis & Simulation</h2>
+      <!-- -- DATA ANALYSIS & SIMULATION -- -->
+      <h2>Data Analysis & Simulation</h2>
+      <section class="division">
+        <ProfileCard
+          image="/ProfileCard/MarioTarantino.jpg"
+          firstName="Mario"
+          lastName="Tarantino"
+          role="Project Manager Pegasus"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/mario-tarantino-305212307/" }
+          ]}
+        />
 
-        <h2>Logistics & Supply Chain</h2>
+        <ProfileCard
+          image="/ProfileCard/AizhanMustafina.jpg"
+          firstName="Aizhan"
+          lastName="Mustafina"
+          role=""
+          socials={[
+          ]}
+         />
+      </section>
 
-        <h2>PR & Media</h2>
+      <!-- -- LOGISTICS & SUPPLY CHAIN -- -->
+      <h2>Logistics & Supply Chain</h2>
+      <section class="division">
+        <ProfileCard
+          image="/ProfileCard/AlbertoIasci.jpg"
+          firstName="Alberto"
+          lastName="Iasci"
+          role=""
+          socials={[
+          ]}
+         />
+      </section>
+
+      <!-- -- PR & MEDIA -- -->
+      <h2>PR & Media</h2>
+      <section class="division">
+        <ProfileCard
+          image="/ProfileCard/FrancescoImparato.jpg"
+          firstName="Francesco"
+          lastName="Imparato"
+          role="Head of PR & Media"
+          socials={[
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/fra-imparato/" }
+          ]}
+        />
       </section>
     </section>
-    -->
   </main>
 </Layout>
 
@@ -59,8 +375,39 @@ import Layout from '../layouts/Layout.astro';
     border-top: 3px solid #000000;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    padding: 30px;
+    gap: 20px;
+    padding: 30px 30px;
     background-color: #252525;
+  }
+
+  .members h2 {
+    padding-top: 10px;
+  }
+
+  .division {
+    width: 100%;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: auto auto;
+    justify-items: left;
+    padding: 30px 0px;
+  }
+
+  @media (min-width: 640px) {
+    .division {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .division {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .division {
+      grid-template-columns: repeat(6, 1fr);
+    }
   }
 </style>
