@@ -6,6 +6,7 @@
     --text-color: #F4F7ED; /* Bianco */
     --btn-color: #A8C81E; /* Verde del pulsante */
     --btn-text: #F4F7ED;
+    --link-color: #C4EC17; /* Verde dei link */
     --font-inter: 'Inter', sans-serif;
 }
 
@@ -48,8 +49,24 @@ main {
   position: relative;
   z-index: 101;
   background-color: #252525;
-  padding: 30px;
-  padding-top: 130px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.top-title-section img {
+  width: 100%;
+  height: 500px;  /* or whatever height you want */
+  object-fit: cover;
+  object-position: center 50%;  /* shifts the image to show less of top/bottom */
+  display: block;
+  border-radius: 15px;
+}
+
+.top-title-section h1 {
+  padding: 30px 30px 0 30px;
+  margin: 0;
 }
 
 .page-content {
@@ -74,19 +91,6 @@ main {
   margin: 0 auto;
 }
 
-.content-text h2 {
-  font-size: 48px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  letter-spacing: -2px;
-}
-
-.content-text p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-color);
-}
-
 .content-image {
   display: flex;
   align-items: center;
@@ -97,27 +101,6 @@ main {
   width: 100%;
   height: auto;
   object-fit: contain;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .content-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    order: 1;
-  }
-
-  .content-image {
-    order: -1;
-  }
-
-  .content-text h2 {
-    font-size: 32px;
-  }
-
-  .content-text p {
-    font-size: 14px;
-  }
 }
 
 h1 {
@@ -137,9 +120,9 @@ h2 {
 }
 
 p {
-  font-size: 1rem;
-  color: #F4F7ED;
+  font-size: 16px;
   line-height: 1.5;
+  color: var(--text-color);
 }
 
 em {
@@ -154,11 +137,73 @@ a {
 }
 
 a:hover {
-  color: var(--btn-color);
+  color: var(--link-color);
 }
 
 img {
   max-width: 100%;
   height: auto;
   border-radius: 15px;
+}
+
+.content-text h2 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+.content-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .content-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    order: 1;
+  }
+
+  .content-image {
+    order: -1;
+  }
+
+  .top-title-section img {
+    width: 100%;
+    height: 400px;  /* or whatever height you want */
+    object-fit: cover;
+    object-position: center 30%;  /* shifts the image to show less of top/bottom */
+    display: block;
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 52px;
+    line-height: 54px;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 34px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .content-text h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+  }
+
+  .content-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
 }
