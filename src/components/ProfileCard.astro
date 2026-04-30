@@ -51,7 +51,7 @@ const { image, firstName, lastName, role, socials = [] } = Astro.props;
     width: 220px;
     background: var(--bg-color);
     padding: 20px;
-    border: 4px solid var(--border-color);
+    border: 3px solid var(--border-color);
     border-radius: 20px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
@@ -64,14 +64,23 @@ const { image, firstName, lastName, role, socials = [] } = Astro.props;
 
   @media (max-width: 768px) {
     .profile-card {
-      width: 160px;
+      width: 165px;
       padding: 15px;
+      border: 2px solid var(--border-color);
     }
 
     .image-container {
       width: 130px;
       height: 130px;
     }
+
+    .image-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 2px solid var(--btn-color);
+  }
   }
 
   .image-container img {
@@ -79,7 +88,7 @@ const { image, firstName, lastName, role, socials = [] } = Astro.props;
     height: 100%;
     border-radius: 15px;
     object-fit: cover;
-    border: 4px solid var(--btn-color);
+    border: 3px solid var(--btn-color);
   }
 
   .content {
