@@ -1,78 +1,167 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FeaturedSponsorCard from '../components/FeaturedSponsorCard.astro';
+import TeamPartnerCard from '../components/TeamPartnerCard.astro';
+import SupporterCard from '../components/SupporterCard.astro';
 ---
 
 <Layout>
-  <main class="wip-container">
-    <div class="wip-content">
-      <h1>Coming Soon</h1>
-      <p>This page is currently under construction. Check back soon!</p>
-      <a href="/" class="back-link">Back to Home</a>
-    </div>
+  <main>
+    <section class="top-title-section">
+      <img src="/TeamBG.jpg" alt="Partners background"/>
+      <h1>Partners & Sponsors</h1>
+    </section>
+
+    <section class="page-content">
+      <div class="content-text">
+        <p>
+          We are proud to collaborate with leading companies and institutions that support our mission
+          to push the limits of human-powered speed. Their contribution is essential to the
+          success of <em>Policumbent</em>.
+        </p>
+      </div>
+    </section>
+
+    <section class="sponsors-section">
+      <div class="featured-grid">
+        <FeaturedSponsorCard
+          name="+CIM"
+          logo="Sponsors/CIM.svg"
+          url="https://cim.eu/"
+          description="CIM is the competence center where innovation in the
+          fields of digital factory and additive manufacturing takes shape."
+        />
+      </div>
+
+      <div class="featured-grid">
+        <FeaturedSponsorCard
+          name="SIEMENS"
+          logo="Sponsors/SiemensLogo.svg"
+          url="https://www.siemens.com"
+          description="SIEMENS is a global technology company that provides
+          innovative solutions for various industries."
+        />
+      </div>
+
+      <div class="team-grid">
+        <TeamPartnerCard
+          name="Carbon-Ti"
+          logo="Sponsors/CARBON-TI_wht.svg"
+          url="https://www.carbon-ti.it/"
+          description="Artisan care, high quality, technological materials all
+          100% Made in Italy. These are the strengths that make Carbon-Ti the
+          Italian brand of reference in the field of premium quality bike
+          components, accessories and spare parts manufacturing."
+        />
+
+        <TeamPartnerCard
+          name="Easy Composites"
+          logo="Sponsors/EasyComposites_Wht.svg"
+          url="https://www.easycomposites.eu/"
+          description="Easy Composites Ltd was established in 2010 and grown
+          quickly to become a global leader in the manufacture and supply of
+          advanced composite materials and equipment."
+        />
+
+
+        <TeamPartnerCard
+          name="Labo-System s.a.s."
+          logo="Sponsors/labo_1_plain_wht.svg"
+          url="https://shop.labo-system.com/it/"
+          description="Established in Turin in 1988, Labo-System s.a.s. is a
+          leading supplier of professional electronic testing and measurement
+          instrumentation, serving both the Italian and international markets."
+        />
+
+        <TeamPartnerCard
+          name="Lyra Bearing"
+          logo="Sponsors/LYRA_BEARING_wht.svg"
+          url="https://lyrabearing.com/"
+          description="We design precision bearings to deliver superior
+          performance and boost efficiency across industries"
+        />
+      </div>
+
+      <h2>Supporters</h2>
+      <div class="supporters-grid">
+        <SupporterCard
+          logo="Sponsors/IGUS.svg"
+          url="https://www.igus.com/"
+        />
+
+        <SupporterCard
+          logo="Sponsors/Molex_Wht.svg"
+          url="https://www.molex.com/"
+        />
+      </div>
+    </section>
   </main>
 </Layout>
 
 <style>
-  .wip-container {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
+  .sponsors-section {
+    border-top: 3px solid #000000;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 20px;
+    padding: 30px 30px;
     background-color: #252525;
-    padding: 0;
-    margin: 0;
   }
 
-  .wip-content {
-    text-align: center;
-    padding: 40px 20px;
-    max-width: 600px;
+  .sponsors-section h2 {
+    padding-top: 10px;
+    letter-spacing: -3px;
   }
 
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: #F4F7ED;
+  .featured-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 0;
   }
 
-  p {
-    font-size: 1.2rem;
-    color: #F4F7ED;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 30px 0;
   }
 
-  .back-link {
-    display: inline-block;
-    background-color: var(--btn-color);
-    color: var(--btn-text);
-    padding: 12px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: opacity 0.3s ease;
+  .supporters-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 30px 0;
+    align-items: center;
   }
 
-  .back-link:hover {
-    opacity: 0.8;
-  }
-
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
+  @media (min-width: 640px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    p {
-      font-size: 1rem;
+    .supporters-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .wip-content {
-      padding: 30px 15px;
+    .supporters-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .team-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .supporters-grid {
+      grid-template-columns: repeat(6, 1fr);
     }
   }
 </style>

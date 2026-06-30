@@ -1,0 +1,90 @@
+---
+interface Props {
+  name: string;
+  logo: string;
+  url: string;
+  description: string;
+}
+
+const { name, logo, url, description } = Astro.props;
+---
+
+<div class="featured-sponsor-card">
+  <a href={url} target="_blank" rel="noopener noreferrer" class="logo-container">
+    <img src={logo} alt={`${name} logo`} loading="lazy" />
+  </a>
+  <div class="content">
+    <h3 class="name">{name}</h3>
+    <p class="description">{description}</p>
+    <p class="description"><a href={url} target="_blank" rel="noopener noreferrer">Learn more here &#8599;</a></p>
+  </div>
+</div>
+
+<style>
+  .featured-sponsor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: #252525;
+    padding: 35px;
+    border: 2px solid #333;
+    border-radius: 16px;
+    transition: border-color 0.3s ease;
+    gap: 30px;
+    box-sizing: border-box;
+  }
+
+  .featured-sponsor-card:hover {
+    border-color: var(--link-color);
+  }
+
+  .logo-container {
+    flex-shrink: 0;
+    width: 320px;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-container img {
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    background: #f4f7ed;
+    object-fit: contain;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .content h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #f4f7ed;
+    letter-spacing: -1px;
+  }
+
+  .content p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f4f7ed;
+  }
+
+  a { text-decoration: underline; }
+
+  @media (min-width: 769px) {
+    .featured-sponsor-card {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .content {
+      text-align: left;
+    }
+  }
+</style>

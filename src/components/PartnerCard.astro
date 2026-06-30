@@ -1,0 +1,109 @@
+---
+interface Props {
+  name: string;
+  logo: string;
+  url: string;
+  tier: string;
+}
+
+const { name, logo, url, tier } = Astro.props;
+---
+
+<div class="partner-card">
+  <a href={url} target="_blank" rel="noopener noreferrer" class="logo-container">
+    <img src={logo} alt={`${name} logo`} loading="lazy" />
+  </a>
+  <div class="content">
+    <h3 class="name">{name}</h3>
+    <p class="tier">{tier}</p>
+  </div>
+</div>
+
+<style>
+  .partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 260px;
+    background: var(--bg-color);
+    padding: 25px;
+    border: 3px solid #000000;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+  }
+
+  .partner-card:hover {
+    border-color: var(--link-color);
+  }
+
+  .logo-container {
+    width: 200px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.3rem;
+    border: 3px solid var(--btn-color);
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+  }
+
+  .partner-card:hover .logo-container {
+    border-color: var(--link-color);
+  }
+
+  .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .name {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+
+  .tier {
+    margin: 0.25rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--link-color);
+    text-transform: uppercase;
+  }
+
+  .logo-container a {
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .partner-card {
+      width: 200px;
+      padding: 15px;
+      border: 2px solid #000000;
+    }
+
+    .logo-container {
+      width: 160px;
+      height: 100px;
+      padding: 8px;
+    }
+
+    .name {
+      font-size: 1rem;
+    }
+
+    .tier {
+      font-size: 0.75rem;
+    }
+  }
+</style>
