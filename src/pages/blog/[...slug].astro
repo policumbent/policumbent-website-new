@@ -75,6 +75,7 @@ const { Content } = await entry.render();
   }
 
   article :global(p) {
+    font-size: inherit;
     margin-bottom: 1.25rem;
   }
 
@@ -99,7 +100,6 @@ const { Content } = await entry.render();
 
   article :global(li) {
     color: var(--text-color);
-    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 0.5rem;
   }
@@ -114,5 +114,11 @@ const { Content } = await entry.render();
     height: auto;
     border-radius: 15px;
     margin: 1.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .blog-content {
+      font-size: 14px;
+    }
   }
 </style>
