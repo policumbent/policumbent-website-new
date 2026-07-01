@@ -25,10 +25,10 @@ const latestPosts = allPosts.slice(0, 3);
           <h2 style="color: #C4EC17">Who are we?</h2>
           <p>
             We are a Student Team from <strong>Politecnico di Torino,</strong> born in 2009.
-          </br></br>
+          <br/><br/>
             We <em>design and build high-performance recumbent bicycles</em>
             and compete in <strong>international races,</strong> pushing the limits of human-powered vehicles.
-          </br></br>
+          <br/><br/>
             Learn more at our <a href="/team">Team page &#8599;</a>.
           </p>
         </div>
@@ -68,7 +68,7 @@ const latestPosts = allPosts.slice(0, 3);
           <div class="latest-grid">
             {
               latestPosts.map(entry => {
-                const slug = entry.data.slug || entry.slug;
+                const slug = entry.data.slug || entry.id;
                 return (
                   <a href={`/blog/${slug}`} class="latest-card">
                     {

@@ -16,7 +16,7 @@ blogEntries.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
     <section class="blog-section">
       {
         blogEntries.map(entry => {
-          const slug = entry.data.slug || entry.slug;
+          const slug = entry.data.slug || entry.id;
           return (
             <a href={`/blog/${slug}`} class="blog-card-link">
               <div class="blog-card">
