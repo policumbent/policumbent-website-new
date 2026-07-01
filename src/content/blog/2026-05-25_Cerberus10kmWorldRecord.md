@@ -26,7 +26,7 @@ minutes, thanks to a different aerodynamic setup designed and implemented by
 the Team.
 
 The day featured two distinct record attempts: the first in the morning, with
-the endurance aerodynamics package, ptimized for ventilation, this
+the endurance aerodynamics package, optimized for ventilation, this
 configuration featured an open front hole (no plexiglass in front of the
 cameras) and a raised tail section. These acted as an air intake and exhaust,
 respectively, ensuring a greater airflow inside the cockpit to assist
