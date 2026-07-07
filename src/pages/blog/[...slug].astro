@@ -116,6 +116,15 @@ const { Content } = await render(entry);
     margin: 1.5rem 0;
   }
 
+  article :global(iframe) {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: 15px;
+    border: none;
+  }
+
   @media (max-width: 768px) {
     .blog-content {
       font-size: 14px;

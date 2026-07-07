@@ -45,9 +45,15 @@ structure.
 The record is now under review by the World Human Powered Vehicle Association
 for official certification.
 
-This achievement was made possible thanks to:
+<br/>
+
+<iframe src="https://www.youtube.com/embed/SoU_lSwf8A4" title="Handbike 10km WORLD RECORD | Aftermovie | Team Policumbent" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<br/><br/>
+
+_This achievement was made possible thanks to:_
 - _Politecnico di Torino and the Contribution Commission,_ which has supported
-- the Team for seventeen years;
+the Team for seventeen years;
 - _Balocco Proving Ground and Stellantis,_ for providing the test track;
 - All the Team's _partner companies and sponsors_
 - _World Human Powered Vehicle Association,_ for the record certification;
@@ -80,3 +86,6 @@ man in the world on a hand-trike in September 2024  during the WHPSC with
 Cerberus, designed and built by Team Policumbent. In October 2025, still with
 Team Policumbent, he confirmed his high level by claiming the World Record for
 the maximum distance convered in one hour.
+
+
+You can find the [full press kit here.](https://drive.proton.me/urls/YEBKRTRQ38#z21iPUXxb0xc)
