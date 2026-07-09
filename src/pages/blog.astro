@@ -8,8 +8,7 @@ blogEntries.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 <Layout>
   <main>
-    <section class="top-title-section">
-      <img src="/TaurusX_Nevada.jpg" alt="Policumbent"/>
+    <section class="top-title-section page-top-section">
       <h1>Our Blog</h1>
     </section>
 
@@ -29,7 +28,7 @@ blogEntries.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
                 }
                 <div class="content">
                   <p class="date">{entry.data.pubDate.toDateString()}</p>
-                  <h2 class="title">{entry.data.title}</h2>
+                  <h2 class="title">{entry.data.shortTitle || entry.data.title}</h2>
                   <p class="description">{entry.data.description}</p>
                 </div>
               </div>
@@ -42,6 +41,10 @@ blogEntries.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 </Layout>
 
 <style>
+  .page-top-section {
+    padding-top: 100px;
+  }
+
   .blog-section {
     display: flex;
     flex-direction: column;

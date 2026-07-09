@@ -80,7 +80,7 @@ const latestPosts = allPosts.slice(0, 3);
                     }
                     <div class="latest-card-body">
                       <p class="latest-date">{entry.data.pubDate.toDateString()}</p>
-                      <h3 class="latest-title">{entry.data.title}</h3>
+                      <h3 class="latest-title">{entry.data.shortTitle || entry.data.title}</h3>
                       <p class="latest-desc">{entry.data.description}</p>
                     </div>
                   </a>

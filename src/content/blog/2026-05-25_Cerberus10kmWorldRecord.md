@@ -5,6 +5,7 @@ description: "Saturday, May 23rd, Politecnico di Torino’s Team Policumbent bre
 author: "Team Policumbent"
 slug: "2026-05-25_Cerberus10kmWorldRecord"
 image: "/BlogImages/2026-05-25_Cerberus10kmWorldRecord.jpg"
+shortTitle: "Masters of handcycling: Cerberus 10 km World Record"
 ---
 
 Saturday, May 23rd, Politecnico di Torino’s Team Policumbent breaks a new

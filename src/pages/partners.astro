@@ -7,8 +7,7 @@ import SupporterCard from '../components/SupporterCard.astro';
 
 <Layout>
   <main>
-    <section class="top-title-section">
-      <img src="/TeamBG.jpg" alt="Partners background"/>
+    <section class="top-title-section page-top-section">
       <h1>Partners & Sponsors</h1>
     </section>
 
@@ -123,8 +122,9 @@ import SupporterCard from '../components/SupporterCard.astro';
           name="Mouser Electronics"
           logo="/Sponsors/MouserElectronics.svg"
           url="https://www.mouser.com/"
-          description="Mouser Electronics is a global factory authorized
-          distributor of semiconductors and electronic components."
+          description="Mouser Electronics is a leading global distributor of
+          electronic components, being a reference point for engineers and
+          electronics designers."
         />
 
         <TeamPartnerCard
@@ -178,6 +178,10 @@ import SupporterCard from '../components/SupporterCard.astro';
 </Layout>
 
 <style>
+  .page-top-section {
+    padding-top: 100px;
+  }
+
   .sponsors-section {
     border-top: 3px solid #000000;
     flex-direction: column;
