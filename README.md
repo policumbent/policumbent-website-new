@@ -22,3 +22,7 @@ image: "/BlogImages/YYYY-MM-DD_Title.jpg"
 
 `image` will be used as the main image for the article, and it must have a
 resolution of 1920px x 640px (or greater, but keeping a 3:1 horizontal ratio).
+
+## Partners guide
+
+Descriptions: 300 characters for main and premium partners, 150 for the rest.
