@@ -1,0 +1,208 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import HeroExplosion from '../components/HeroExplosion.astro';
+import { useTranslations, type Locale } from '../i18n/utils';
+
+const locale: Locale = 'it';
+const { t } = useTranslations(locale);
+
+const allPosts = (await getCollection('blog')).filter(e => e.data.locale === locale);
+allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const latestPosts = allPosts.slice(0, 3);
+---
+
+<Layout locale={locale}>
+  <main>
+    <HeroExplosion />
+
+    <section class="title-section">
+      <h1 style="font-size: 64px; line-height: 66px;">{t('home.heroTitle')}</h1>
+    </section>
+
+    <section class="page-content">
+      <div class="content-container">
+        <div class="content-text">
+          <h2 style="color: #C4EC17">{t('home.whoAreWe')}</h2>
+          <p set:html={t('home.whoAreWeText').replace('{locale}', locale)} />
+        </div>
+        <div class="content-image">
+          <img src="/Cerberus_HomePage.png" alt="Cerberus, Nevada 2024" />
+        </div>
+      </div>
+    </section>
+
+    {
+      latestPosts.length > 0 && (
+        <section class="page-content latest-news">
+          <h2 class="section-title">{t('home.latestArticles')}</h2>
+          <div class="latest-grid">
+            {
+              latestPosts.map(entry => {
+                const slug = entry.id;
+                return (
+                  <a href={`/${locale}/blog/${slug}`} class="latest-card">
+                    {
+                      entry.data.image && (
+                        <div class="latest-card-image">
+                          <img src={entry.data.image} alt={entry.data.title} />
+                        </div>
+                      )
+                    }
+                    <div class="latest-card-body">
+                      <p class="latest-date">{entry.data.pubDate.toLocaleDateString('it-IT', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                      <h3 class="latest-title">{entry.data.shortTitle || entry.data.title}</h3>
+                      <p class="latest-desc">{entry.data.description}</p>
+                    </div>
+                  </a>
+                );
+              })
+            }
+          </div>
+        </section>
+      )
+    }
+  </main>
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-content {
+    padding: 60px 30px;
+    background-color: #252525;
+  }
+
+  .content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .content-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .section-title {
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+  }
+
+  .latest-news {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .latest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .latest-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--link-color);
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--bg-color);
+    transition: opacity 0.2s ease;
+  }
+
+  .latest-card:hover {
+    opacity: 0.85;
+  }
+
+  .latest-card-image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .latest-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .latest-card-body {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+
+  .latest-date {
+    color: var(--link-color);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .latest-title {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .latest-desc {
+    color: var(--text-color);
+    font-size: 13px;
+    line-height: 1.5;
+    opacity: 0.8;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  @media (max-width: 900px) {
+    .latest-grid {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .content-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      order: 1;
+    }
+
+    .content-image {
+      order: -1;
+    }
+  }
+</style>
