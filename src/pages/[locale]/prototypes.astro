@@ -1,0 +1,46 @@
+---
+import PrototypeCard from '../../components/PrototypeCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations, locales, type Locale } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const { t } = useTranslations(locale as Locale);
+---
+
+<Layout locale={locale as Locale}>
+  <main>
+    <section class="top-title-section">
+      <img src="/TaurusX_Nevada.jpg" alt="TaurusX during the World Human Powered Speed Challenge in Nevada"/>
+      <h1>{t('prototypes.title')}</h1>
+    </section>
+
+    <section class="prototypes-section">
+      <PrototypeCard
+        image="/TaurusX_Nevada.jpg"
+        name="TaurusX"
+        years="2019-2022"
+        category={locale === 'it' ? "Donne, singolo pilota (a trazione gambe)" : "Women, single rider (leg powered)"}
+        link={`/${locale}/prototypes/taurus-x`}
+        yearsLabel={t('prototypes.yearsOfActivity')}
+        learnMoreLabel={t('prototypes.learnMore')}
+      />
+
+      <h2>{t('prototypes.workInProgress')}</h2>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .prototypes-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0;
+    background-color: #252525;
+  }
+</style>

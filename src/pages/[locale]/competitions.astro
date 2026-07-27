@@ -1,13 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations, locales, type Locale } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const { t } = useTranslations(locale as Locale);
 ---
 
-<Layout>
+<Layout locale={locale as Locale}>
   <main class="wip-container">
     <div class="wip-content">
-      <h1>Coming Soon</h1>
-      <p>This page is currently under construction. Check back soon!</p>
-      <a href="/" class="back-link">Back to Home</a>
+      <h1>{t('competitions.comingSoon')}</h1>
+      <p>{t('competitions.underConstruction')}</p>
+      <a href={`/${locale}`} class="back-link">{t('competitions.backToHome')}</a>
     </div>
   </main>
 </Layout>

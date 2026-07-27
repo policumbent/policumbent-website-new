@@ -1,15 +1,22 @@
 ---
 // Footer.astro
 import logo from '../assets/LogoPolicumbent_Wht.svg';
+import { useTranslations, type Locale } from '../i18n/utils';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const { t } = useTranslations(locale);
 ---
 
 <footer class="main-footer">
   <div class="footer-container">
-    <!-- Top Section: Logos and Social Links -->
     <div class="footer-top">
       <div class="footer-left">
         <div class="logos-section">
-            <a href="/">
+            <a href={`/${locale}`}>
               <img class="footer-logo" src={logo.src} alt="Policumbent Logo" />
             </a>
           <div class="vertical-bar"></div>
@@ -19,7 +26,6 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
         </div>
       </div>
 
-      <!-- Right Section: Social Links -->
       <div class="footer-right">
         <a href="https://instagram.com/policumbent" target="_blank" rel="noopener noreferrer" class="social-link">
           <span>Instagram</span>
@@ -39,16 +45,14 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
       </div>
     </div>
 
-    <!-- Bottom Section: Team Info and Contact -->
     <div class="footer-bottom">
       <div class="footer-bottom-left">
-        <p class="footer-tagline">A <em><a href="https://www.polito.it" target="_blank" rel="noopener noreferrer">Politecnico di Torino</a></em> student
-          Team — Striving for speed, since 2009</p>
-        <p>Copyright &copy; 2009-2026 Policumbent. All rights reserved.</p>
+        <p class="footer-tagline" set:html={t('footer.tagline')}></p>
+        <p set:html={t('footer.copyright')}></p>
       </div>
       <div class="footer-bottom-right">
-        <p><strong>CONTACT:</strong> <a href="mailto:info@policumbent.it">info@policumbent.it</a></p>
-        <p><strong>ADDRESS:</strong> Via Egeo, 18, Torino TO - 10134</p>
+        <p><strong>{t('footer.contact')}:</strong> <a href="mailto:info@policumbent.it">info@policumbent.it</a></p>
+        <p><strong>{t('footer.address')}:</strong> {t('footer.addressValue')}</p>
       </div>
     </div>
   </div>
@@ -131,7 +135,7 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
     width: 100%;
   }
 
-  .footer-tagline p {
+  .footer-tagline :global(p) {
     color: var(--text-color);
     font-size: 14px;
     font-weight: 500;
@@ -139,12 +143,12 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
     letter-spacing: -0.02em;
   }
 
-  .footer-tagline a {
+  .footer-tagline :global(a) {
     color: var(--text-color);
     text-decoration: underline;
   }
 
-  .footer-tagline a:hover {
+  .footer-tagline :global(a:hover) {
     color: var(--link-color);
   }
 
@@ -194,7 +198,6 @@ import logo from '../assets/LogoPolicumbent_Wht.svg';
     color: var(--link-color);
   }
 
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .main-footer {
       padding: 30px 30px;

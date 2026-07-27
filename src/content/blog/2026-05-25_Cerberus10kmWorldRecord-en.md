@@ -1,9 +1,9 @@
 ---
 title: "Policumbent and Diego Colombari: Masters of handcycling, 10 km Record"
 pubDate: 2026-05-25
-description: "Saturday, May 23rd, Politecnico di Torino’s Team Policumbent breaks a new handcycling World Record!"
+description: "Saturday, May 23rd, Politecnico di Torino's Team Policumbent breaks a new handcycling World Record!"
 author: "Team Policumbent"
-slug: "2026-05-25_Cerberus10kmWorldRecord"
+locale: "en"
 image: "/BlogImages/2026-05-25_Cerberus10kmWorldRecord.jpg"
 shortTitle: "Masters of handcycling: Cerberus 10 km World Record"
 ---

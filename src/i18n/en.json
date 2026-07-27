@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "team": "TEAM",
+    "blog": "BLOG",
+    "prototypes": "PROTOTYPES",
+    "competitions": "COMPETITIONS",
+    "partners": "PARTNERS",
+    "contacts": "CONTACTS"
+  },
+  "home": {
+    "heroTitle": "We build the fastest bikes in the world.",
+    "whoAreWe": "Who are we?",
+    "whoAreWeText": "We are a Student Team from <strong>Politecnico di Torino,</strong> born in 2009.<br/><br/>We <em>design and build high-performance recumbent bicycles</em> and compete in <strong>international races,</strong> pushing the limits of human-powered vehicles.<br/><br/>Learn more at our <a href=\"/{locale}/team\">Team page &#8599;</a>.",
+    "latestArticles": "Latest Articles"
+  },
+  "team": {
+    "title": "The Team",
+    "description": "Policumbent is a Student Team from <em>Politecnico di Torino,</em> Turin, Italy. Founded in 2009 with the aim of designing the fastest human-powered vehicles in the world, the Team has been pushing the limits of speed on land for over a decade.<br><br>The Team holds the <em><strong>World Speed Record</strong></em> for the \"arm-powered\" category with their vehicle \"Cerberus,\" with <em>83.28 km/h</em>. In the \"leg-powered\" category, Policumbent holds the <em><strong>Italian men record</strong> (136.49 km/h)</em> and the <em><strong>Italian women record</strong> (123.88 km/h)</em>.",
+    "membersTitle": "Our members and divisions",
+    "divisions": {
+      "board": "Board",
+      "cyclists": "Cyclists",
+      "mechanics": "Mechanics & Structures",
+      "aerodynamics": "Aerodynamics",
+      "electronics": "Electronics & IT",
+      "biomedics": "Biomedics",
+      "dataAnalysis": "Data Analysis & Simulation",
+      "logistics": "Logistics & Supply Chain",
+      "prMedia": "PR & Media"
+    }
+  },
+  "blog": {
+    "title": "Our Blog"
+  },
+  "prototypes": {
+    "title": "Our Prototypes",
+    "workInProgress": "WORK IN PROGRESS",
+    "yearsOfActivity": "Years of activity:",
+    "learnMore": "Learn more &#8599;"
+  },
+  "competitions": {
+    "comingSoon": "Coming Soon",
+    "underConstruction": "This page is currently under construction. Check back soon!",
+    "backToHome": "Back to Home"
+  },
+  "contacts": {
+    "comingSoon": "Coming Soon",
+    "underConstruction": "This page is currently under construction. Check back soon!",
+    "backToHome": "Back to Home"
+  },
+  "partners": {
+    "title": "Partners & Sponsors",
+    "description": "We are proud to collaborate with leading companies and institutions that support our mission to push the limits of human-powered speed. Their contribution is essential to the success of <em>Policumbent</em>.",
+    "supporters": "Supporters",
+    "learnMore": "Learn more here &#8599;"
+  },
+  "blogPost": {
+    "publishedOn": "Published on:",
+    "by": "By:"
+  },
+  "footer": {
+    "tagline": "A <em><a href=\"https://www.polito.it\" target=\"_blank\" rel=\"noopener noreferrer\">Politecnico di Torino</a></em> student Team — Striving for speed, since 2009",
+    "copyright": "Copyright © 2009-2026 Policumbent. All rights reserved.",
+    "contact": "CONTACT",
+    "address": "ADDRESS",
+    "addressValue": "Via Egeo, 18, Torino TO - 10134"
+  },
+  "language": {
+    "switchTo": "IT"
+  }
+}

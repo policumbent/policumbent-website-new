@@ -1,36 +1,34 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import HeroExplosion from '../components/HeroExplosion.astro';
+import Layout from '../../layouts/Layout.astro';
+import HeroExplosion from '../../components/HeroExplosion.astro';
+import { useTranslations, locales, type Locale } from '../../i18n/utils';
 
-const allPosts = await getCollection('blog');
+export async function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const { t } = useTranslations(locale as Locale);
+
+const allPosts = (await getCollection('blog')).filter(e => e.data.locale === locale);
 allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const latestPosts = allPosts.slice(0, 3);
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>  
+<Layout locale={locale as Locale}>
   <main>
     <HeroExplosion />
 
     <section class="title-section">
-      <h1 style="font-size: 64px; line-height: 66px;">We build the fastest bikes in the world.</h1>
+      <h1 style="font-size: 64px; line-height: 66px;">{t('home.heroTitle')}</h1>
     </section>
 
     <section class="page-content">
       <div class="content-container">
         <div class="content-text">
-          <h2 style="color: #C4EC17">Who are we?</h2>
-          <p>
-            We are a Student Team from <strong>Politecnico di Torino,</strong> born in 2009.
-          <br/><br/>
-            We <em>design and build high-performance recumbent bicycles</em> and
-            compete in <strong>international races,</strong> pushing the limits of human-powered vehicles.
-          <br/><br/>
-            Learn more at our <a href="/team">Team page &#8599;</a>.
-          </p>
+          <h2 style="color: #C4EC17">{t('home.whoAreWe')}</h2>
+          <p set:html={t('home.whoAreWeText').replace('{locale}', locale)} />
         </div>
         <div class="content-image">
           <img src="/Cerberus_HomePage.png" alt="Cerberus, Nevada 2024" />
@@ -38,39 +36,16 @@ const latestPosts = allPosts.slice(0, 3);
       </div>
     </section>
 
-    <!-- *UNDER CONSTRUCTION* - Uncomment when ready
-    <section class="page-content">
-      <h1>Our fastest bicycle for each category:</h1>
-    </section>
-
-    TODO: insert record cards
-
-    <section class="page-content">
-      <div class="content-container">
-        <div class="content-image">
-          <img src="/Pegasus_Mesh.svg" alt="Meshed Pegasus fairing" />
-        </div>
-        <div class="content-text">
-          <h2 style="color: #C4EC17">We are not done yet.</h2>
-          <p>
-            <strong>The challenge</strong> for the absolute <em>World Speed Record</em> for a human-powered vehicle
-            <strong>is still on: our next goal is set.</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-    -->
-
     {
       latestPosts.length > 0 && (
         <section class="page-content latest-news">
-          <h2 class="section-title">Latest Articles</h2>
+          <h2 class="section-title">{t('home.latestArticles')}</h2>
           <div class="latest-grid">
             {
               latestPosts.map(entry => {
-                const slug = entry.data.slug || entry.id;
+                const slug = entry.id;
                 return (
-                  <a href={`/blog/${slug}`} class="latest-card">
+                  <a href={`/${locale}/blog/${slug}`} class="latest-card">
                     {
                       entry.data.image && (
                         <div class="latest-card-image">
@@ -79,7 +54,7 @@ const latestPosts = allPosts.slice(0, 3);
                       )
                     }
                     <div class="latest-card-body">
-                      <p class="latest-date">{entry.data.pubDate.toDateString()}</p>
+                      <p class="latest-date">{entry.data.pubDate.toLocaleDateString(locale === 'it' ? 'it-IT' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                       <h3 class="latest-title">{entry.data.shortTitle || entry.data.title}</h3>
                       <p class="latest-desc">{entry.data.description}</p>
                     </div>
@@ -95,7 +70,6 @@ const latestPosts = allPosts.slice(0, 3);
 </Layout>
 
 <style>
-  /* Stili specifici per la Home Page */
   main {
     width: 100%;
     min-height: 100vh;
@@ -224,7 +198,6 @@ const latestPosts = allPosts.slice(0, 3);
     }
   }
 
-  /* Mobile responsive */
   @media (max-width: 768px) {
     .content-container {
       grid-template-columns: 1fr;

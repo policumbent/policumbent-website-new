@@ -4,9 +4,10 @@ interface Props {
   logo: string;
   url: string;
   description: string;
+  learnMoreLabel?: string;
 }
 
-const { name, logo, url, description } = Astro.props;
+const { name, logo, url, description, learnMoreLabel = 'Learn more here &#8599;' } = Astro.props;
 ---
 
 <div class="featured-sponsor-card">
@@ -16,7 +17,7 @@ const { name, logo, url, description } = Astro.props;
   <div class="content">
     <h3 class="name">{name}</h3>
     <p class="description">{description}</p>
-    <p class="description"><a href={url} target="_blank" rel="noopener noreferrer">Learn more here &#8599;</a></p>
+    <p class="description"><a href={url} target="_blank" rel="noopener noreferrer" set:html={learnMoreLabel} /></p>
   </div>
 </div>
 

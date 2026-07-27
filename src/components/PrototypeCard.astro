@@ -5,9 +5,11 @@ interface Props {
   years: string;
   category: string;
   link: string;
+  yearsLabel?: string;
+  learnMoreLabel?: string;
 }
 
-const { image, name, years, category, link } = Astro.props;
+const { image, name, years, category, link, yearsLabel = 'Years of activity:', learnMoreLabel = 'Learn more &#8599;' } = Astro.props;
 ---
 
 <div class="prototype-card">
@@ -17,9 +19,9 @@ const { image, name, years, category, link } = Astro.props;
 
   <div class="content">
     <h2 class="name">{name}</h2>
-    <p class="years">Years of activity: {years}</p>
+    <p class="years">{yearsLabel} {years}</p>
     <p class="category"><i>{category}</i></p>
-    <p><a href={link} rel="noopener noreferrer">Learn more &#8599;</a></p>
+    <p><a href={link} rel="noopener noreferrer" set:html={learnMoreLabel} /></p>
   </div>
 </div>
 

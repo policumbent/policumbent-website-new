@@ -1,36 +1,33 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ProfileCard from '../components/ProfileCard.astro';
+import Layout from '../../layouts/Layout.astro';
+import ProfileCard from '../../components/ProfileCard.astro';
+import { useTranslations, locales, type Locale } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const { t } = useTranslations(locale as Locale);
 ---
 
-<Layout>
+<Layout locale={locale as Locale}>
   <main>
     <section class="top-title-section">
       <img src="/TeamBG.jpg" alt="Team background"/>
-      <h1>The Team</h1>
+      <h1>{t('team.title')}</h1>
     </section>
 
     <section class="page-content">
         <div class="content-text">
-          <p>
-            Policumbent is a Student Team from <em>Politecnico di Torino,</em> Turin, Italy. Founded in
-            2009 with the aim of designing the fastest human-powered vehicles in the world, the Team has
-            been pushing the limits of speed on land for over a decade.
-            
-          <br><br>
-            
-            The Team holds the <em><strong>World Speed Record</strong></em> for the "arm-powered" category
-            with their vehicle "Cerberus," with <em>83.28 km/h</em>. In the "leg-powered" category,
-            Policumbent holds the <em><strong>Italian men record</strong> (136.49 km/h)</em> and the
-            <em><strong>Italian women record</strong> (123.88 km/h)</em>.
-          </p>
+          <p set:html={t('team.description')} />
         </div>
     </section>
 
     <section class="members">
-      <h1>Our members and divisions</h1>
+      <h1>{t('team.membersTitle')}</h1>
 
-      <h2>Board</h2>
+      <h2>{t('team.divisions.board')}</h2>
       <section class="division">
         <ProfileCard
           image="/ProfileCard/DanieleBecchero.jpg"
@@ -110,14 +107,11 @@ import ProfileCard from '../components/ProfileCard.astro';
         />
       </section>
 
-      <!-- -- CYCLISTS -- -->
-      <h2>Cyclists</h2>
+      <h2>{t('team.divisions.cyclists')}</h2>
       <section class="division">
-
       </section>
 
-      <!-- -- MECHANICS & STRUCTURES -- -->
-      <h2>Mechanics & Structures</h2>
+      <h2>{t('team.divisions.mechanics')}</h2>
       <section class="division">
         <ProfileCard
           image="/ProfileCard/DanieleMita.jpg"
@@ -232,8 +226,7 @@ import ProfileCard from '../components/ProfileCard.astro';
         />
       </section>
 
-      <!-- -- AERODYNAMICS -- -->
-      <h2>Aerodynamics</h2>
+      <h2>{t('team.divisions.aerodynamics')}</h2>
       <section class="division">
         <ProfileCard
           image="/ProfileCard/RiccardoBuzzi.jpg"
@@ -263,8 +256,7 @@ import ProfileCard from '../components/ProfileCard.astro';
         />
       </section>
 
-      <!-- -- ELECTRONICS & IT -- -->
-      <h2>Electronics & IT</h2>
+      <h2>{t('team.divisions.electronics')}</h2>
       <section class="division">
         <ProfileCard
           image="/ProfileCard/SimoneViola.jpg"
@@ -304,8 +296,7 @@ import ProfileCard from '../components/ProfileCard.astro';
          />
       </section>
 
-      <!-- -- BIOMEDICS -- -->
-      <h2>Biomedics</h2>
+      <h2>{t('team.divisions.biomedics')}</h2>
       <section class="division">
         <ProfileCard
           image="/ProfileCard/PaoloBorgna.jpg"
@@ -316,11 +307,9 @@ import ProfileCard from '../components/ProfileCard.astro';
             { platform: "LinkedIn", url: "https://www.linkedin.com/in/paolo-borgna-b232b6212/" }
           ]}
         />
-        
       </section>
 
-      <!-- -- DATA ANALYSIS & SIMULATION -- -->
-      <h2>Data Analysis & Simulation</h2>
+      <h2>{t('team.divisions.dataAnalysis')}</h2>
       <section class="division">
         <ProfileCard
           image="/ProfileCard/MarioTarantino.jpg"
@@ -342,8 +331,7 @@ import ProfileCard from '../components/ProfileCard.astro';
          />
       </section>
 
-      <!-- -- LOGISTICS & SUPPLY CHAIN -- -->
-      <h2>Logistics & Supply Chain</h2>
+      <h2>{t('team.divisions.logistics')}</h2>
       <section class="division">
         <ProfileCard
           image="/ProfileCard/AlbertoIasci.jpg"
@@ -355,8 +343,7 @@ import ProfileCard from '../components/ProfileCard.astro';
          />
       </section>
 
-      <!-- -- PR & MEDIA -- -->
-      <h2>PR & Media</h2>
+      <h2>{t('team.divisions.prMedia')}</h2>
       <section class="division">
         <ProfileCard
           image="/ProfileCard/FrancescoImparato.jpg"

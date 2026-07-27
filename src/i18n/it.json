@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "team": "TEAM",
+    "blog": "BLOG",
+    "prototypes": "PROTOTIPI",
+    "competitions": "COMPETIZIONI",
+    "partners": "PARTNER",
+    "contacts": "CONTATTI"
+  },
+  "home": {
+    "heroTitle": "Costruiamo le biciclette più veloci al mondo.",
+    "whoAreWe": "Chi siamo?",
+    "whoAreWeText": "Siamo uno Team Studentesco del <strong>Politecnico di Torino,</strong> nato nel 2009.<br/><br/><em>Progettiamo e costruiamo biciclette reclinate ad alte prestazioni</em> e partecipiamo a <strong>gare internazionali,</strong> spingendo i limiti dei veicoli a propulsione umana.<br/><br/>Scopri di più sulla nostra <a href=\"/{locale}/team\"> pagina del Team &#8599;</a>.",
+    "latestArticles": "Ultimi articoli"
+  },
+  "team": {
+    "title": "Il Team",
+    "description": "Policumbent è uno Team Studentesco del <em>Politecnico di Torino,</em> Torino, Italia. Fondato nel 2009 con l'obiettivo di progettare i veicoli a propulsione umana più veloci del mondo, il Team ha spinto i limiti della velocità su terra per oltre un decennio.<br><br>Il Team detiene il <em><strong>Record Mondiale di Velocità</strong></em> nella categoria \"arm-powered\" con il suo veicolo \"Cerberus,\" con <em>83,28 km/h</em>. Nella categoria \"leg-powered,\" Policumbent detiene il <em><strong>record italiano maschile</strong> (136,49 km/h)</em> e il <em><strong>record italiano femminile</strong> (123,88 km/h)</em>.",
+    "membersTitle": "I nostri membri e i reparti",
+    "divisions": {
+      "board": "Coordinamento",
+      "cyclists": "Ciclisti",
+      "mechanics": "Meccanica & Strutture",
+      "aerodynamics": "Aerodinamica",
+      "electronics": "Elettronica & IT",
+      "biomedics": "Biomedica",
+      "dataAnalysis": "Analisi Dati & Simulazione",
+      "logistics": "Logistica & Supply Chain",
+      "prMedia": "PR & Media"
+    }
+  },
+  "blog": {
+    "title": "Il nostro Blog"
+  },
+  "prototypes": {
+    "title": "I nostri Prototipi",
+    "workInProgress": "IN LAVORAZIONE",
+    "yearsOfActivity": "Anni di attività:",
+    "learnMore": "Scopri di più &#8599;"
+  },
+  "competitions": {
+    "comingSoon": "Prossimamente",
+    "underConstruction": "Questa pagina è attualmente in costruzione. Torna a trovarci presto!",
+    "backToHome": "Torna alla Home"
+  },
+  "contacts": {
+    "comingSoon": "Prossimamente",
+    "underConstruction": "Questa pagina è attualmente in costruzione. Torna a trovarci presto!",
+    "backToHome": "Torna alla Home"
+  },
+  "partners": {
+    "title": "Partner & Sponsor",
+    "description": "Siamo orgogliosi di collaborare con aziende e istituzioni leader che supportano il nostro obiettivo di spingere i limiti della velocità a propulsione umana. Il loro contributo è fondamentale per il successo di <em>Policumbent</em>.",
+    "supporters": "Supporter",
+    "learnMore": "Scopri di più qui &#8599;"
+  },
+  "blogPost": {
+    "publishedOn": "Pubblicato il:",
+    "by": "Di:"
+  },
+  "footer": {
+    "tagline": "Team Studentesco del <em><a href=\"https://www.polito.it\" target=\"_blank\" rel=\"noopener noreferrer\">Politecnico di Torino</a></em> — Striving for Speed, since 2009",
+    "copyright": "Copyright © 2009-2026 Policumbent. Tutti i diritti riservati.",
+    "contact": "CONTATTO",
+    "address": "INDIRIZZO",
+    "addressValue": "Via Egeo, 18, Torino TO - 10134"
+  },
+  "language": {
+    "switchTo": "EN"
+  }
+}

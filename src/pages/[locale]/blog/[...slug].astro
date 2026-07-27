@@ -1,19 +1,31 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../../layouts/Layout.astro';
+import { useTranslations, locales, type Locale } from '../../../i18n/utils';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
-  return blogEntries.map(entry => ({
-    params: { slug: entry.data.slug || entry.id }, props: { entry },
-  }));
+  const paths: { params: { locale: string; slug: string }; props: { entry: any } }[] = [];
+  for (const entry of blogEntries) {
+    const entryLocale = entry.data.locale;
+    if (locales.includes(entryLocale as Locale)) {
+      const slug = entry.id;
+      paths.push({
+        params: { locale: entryLocale, slug },
+        props: { entry },
+      });
+    }
+  }
+  return paths;
 }
 
+const { locale } = Astro.params;
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const { t } = useTranslations(locale as Locale);
 ---
 
-<Layout>
+<Layout locale={locale as Locale}>
   <main>
     <section class="page-content blog-content">
       <div class="article-text">
@@ -23,8 +35,8 @@ const { Content } = await render(entry);
             <img src={entry.data.image} alt={entry.data.title} class="cover-image" />
           )
         }
-        <p class="pub-date">Published on: {entry.data.pubDate.toDateString()}</p>
-        <p class="author">By: {entry.data.author}</p>
+        <p class="pub-date">{t('blogPost.publishedOn')} {entry.data.pubDate.toLocaleDateString(locale === 'it' ? 'it-IT' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        <p class="author">{t('blogPost.by')} {entry.data.author}</p>
         <article>
           <Content />
         </article>
