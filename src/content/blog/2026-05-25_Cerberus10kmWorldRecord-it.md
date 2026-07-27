@@ -5,7 +5,7 @@ description: "Sabato 23 maggio, lo Student Team Policumbent del Politecnico di T
 author: "Team Policumbent"
 locale: "it"
 image: "/BlogImages/2026-05-25_Cerberus10kmWorldRecord.jpg"
-shortTitle: "Maestri dell'handbike': Record Mondiale Cerberus 10 km"
+shortTitle: "Maestri dell'handbike: Record Mondiale Cerberus 10 km"
 ---
 
 Sabato 23 maggio, il Team Policumbent del Politecnico di Torino fa registrare un nuovo Record del
