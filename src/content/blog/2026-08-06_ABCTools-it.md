@@ -4,7 +4,7 @@ pubDate: 2026-08-06
 description: "Il Team Policumbent è lieto di annunciare una nuova sponsorizzazione con ABC Tools, azienda italiana leader nell’ambito dell’utensileria, diventando così Main Partner per il prosieguo della stagione 2026."
 author: "Team Policumbent"
 locale: "it"
-image: "/BlogImages/2026-08-06_ABCTools"
+image: "/BlogImages/2026-08-06_ABCTools.png"
 shortTitle: "Team Policumbent annuncia ABC Tools come Main Partner"
 ---
 
