@@ -34,8 +34,12 @@
   },
   "prototypes": {
     "title": "Our Prototypes",
+    "description": "Our bicycles are among the fastest and most efficient human-powered vehicles in the world. However, beyond the appealing world of competitions and records, the aim of Team Policumbent is to underline the importance of cycling as a real opportunity of creating a new perspective of living a territory, to travel on it and, of course, to respect it.",
     "workInProgress": "WORK IN PROGRESS",
-    "yearsOfActivity": "Years of activity:",
+    "season": "Season:",
+    "speed": "Speed:",
+    "gallery": "Gallery",
+    "backToPrototypes": "Back to all prototypes",
     "learnMore": "Learn more &#8599;"
   },
   "competitions": {

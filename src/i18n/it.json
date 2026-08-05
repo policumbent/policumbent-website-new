@@ -34,8 +34,12 @@
   },
   "prototypes": {
     "title": "I nostri Prototipi",
+    "description": "Le nostre biciclette sono tra i veicoli a propulsione umana più veloci ed efficienti al mondo. Tuttavia, al di là del mondo accattivante delle competizioni e dei record, il vero obiettivo del Team Policumbent è sottolineare l'importanza del ciclismo come reale opportunità di creare una nuova prospettiva di vivere un territorio, di viaggiare su di esso e, ovviamente, di rispettarlo.",
     "workInProgress": "IN LAVORAZIONE",
-    "yearsOfActivity": "Anni di attività:",
+    "season": "Stagione:",
+    "speed": "Velocità:",
+    "gallery": "Galleria",
+    "backToPrototypes": "Torna a tutti i prototipi",
     "learnMore": "Scopri di più &#8599;"
   },
   "competitions": {

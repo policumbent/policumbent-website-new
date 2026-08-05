@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import PrototypeCard from '../../components/PrototypeCard.astro';
 import Layout from '../../layouts/Layout.astro';
 import { useTranslations, locales, type Locale } from '../../i18n/utils';
@@ -9,6 +10,10 @@ export async function getStaticPaths() {
 
 const { locale } = Astro.params;
 const { t } = useTranslations(locale as Locale);
+
+const prototypes = (await getCollection('prototypes'))
+  .filter((entry) => entry.data.locale === locale)
+  .sort((a, b) => b.data.order - a.data.order);
 ---
 
 <Layout locale={locale as Locale}>
@@ -18,23 +23,36 @@ const { t } = useTranslations(locale as Locale);
       <h1>{t('prototypes.title')}</h1>
     </section>
 
-    <section class="prototypes-section">
-      <PrototypeCard
-        image="/TaurusX_Nevada.jpg"
-        name="TaurusX"
-        years="2019-2022"
-        category={locale === 'it' ? "Donne, singolo pilota (a trazione gambe)" : "Women, single rider (leg powered)"}
-        link={`/${locale}/prototypes/taurus-x`}
-        yearsLabel={t('prototypes.yearsOfActivity')}
-        learnMoreLabel={t('prototypes.learnMore')}
-      />
+    <section class="page-content">
+      <p class="prototypes-description">{t('prototypes.description')}</p>
+    </section>
 
-      <h2>{t('prototypes.workInProgress')}</h2>
+    <section class="prototypes-section">
+      {
+        prototypes.map((prototype) => (
+          <PrototypeCard
+            image={prototype.data.cardImage}
+            name={prototype.data.title}
+            years={prototype.data.season}
+            category={prototype.data.category}
+            link={`/${locale}/prototypes/${prototype.data.slug}`}
+            yearsLabel={t('prototypes.season')}
+            learnMoreLabel={t('prototypes.learnMore')}
+          />
+        ))
+      }
     </section>
   </main>
 </Layout>
 
 <style>
+  .prototypes-description {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
   .prototypes-section {
     display: flex;
     flex-direction: column;
