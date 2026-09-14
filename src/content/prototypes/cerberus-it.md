@@ -3,10 +3,10 @@ title: "Cerberus"
 locale: "it"
 slug: "cerberus"
 season: "2022 - 2026"
-speed: "83.28km/h"
+speed: "83,28 km/h"
 category: "Men, single rider (arm powered)"
-image: "https://www.datocms-assets.com/39999/1669470323-cerberus-copertina.png?crop=focalpoint&fit=crop&fm=jpg&fp-x=0.44&fp-y=0.55&h=900&w=1200"
-cardImage: "https://www.datocms-assets.com/39999/1669470323-cerberus-copertina.png?crop=focalpoint&fit=crop&fm=jpg&fp-x=0.44&fp-y=0.55&h=500&w=500"
+image: "/PrototypesImages/Cerberus.png"
+cardImage: "/PrototypesImages/Cerberus.png"
 order: 9
 gallery:
   - "https://www.datocms-assets.com/39999/1661251186-mg_2890.png?w=1600&h=1400"

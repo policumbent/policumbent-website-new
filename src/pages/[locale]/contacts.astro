@@ -11,76 +11,155 @@ const { t } = useTranslations(locale as Locale);
 ---
 
 <Layout locale={locale as Locale}>
-  <main class="wip-container">
-    <div class="wip-content">
-      <h1>{t('contacts.comingSoon')}</h1>
-      <p>{t('contacts.underConstruction')}</p>
-      <a href={`/${locale}`} class="back-link">{t('contacts.backToHome')}</a>
-    </div>
+  <main>
+    <section class="page-content contacts-content">
+      <div class="contacts-text">
+        <h1>{t('contacts.title')}</h1>
+      </div>
+
+      <section class="contacts-grid">
+        <div class="contact-card">
+          <div class="content">
+            <p class="division-tag">{t('contacts.divisions.generic')}</p>
+            <h2 class="division-name">Team Policumbent</h2>
+            <a href="mailto:info@policumbent.it" class="contact-email">info@policumbent.it</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="content">
+            <p class="division-tag">{t('contacts.divisions.teamLeader')}</p>
+            <h2 class="division-name">Mario Tarantino</h2>
+            <a href="mailto:teamleader@policumbent.it" class="contact-email">teamleader@policumbent.it</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="content">
+            <p class="division-tag">{t('contacts.divisions.logistics')}</p>
+            <h2 class="division-name">Logistics &amp; Supply Chain</h2>
+            <a href="mailto:management@policumbent.it" class="contact-email">management@policumbent.it</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="content">
+            <p class="division-tag">{t('contacts.divisions.prMedia')}</p>
+            <h2 class="division-name">PR &amp; Media</h2>
+            <a href="mailto:communication@policumbent.it" class="contact-email">communication@policumbent.it</a>
+          </div>
+        </div>
+    </section>
+    </section>
   </main>
 </Layout>
 
 <style>
-  .wip-container {
-    width: 100%;
-    min-height: 100vh;
+  .contacts-text {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .contacts-text h1 {
+    padding-top: 60px;
+    margin: 0 auto 3rem 0;
+  }
+
+  .contacts-description {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .contacts-grid {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 2rem;
     background-color: #252525;
-    padding: 0;
+  }
+
+  .contact-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    max-width: 900px;
+    background: var(--bg-color);
+    border: 5px solid var(--link-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+  }
+
+  .contact-card:hover {
+    opacity: 0.85;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    color: var(--text-color);
+  }
+
+  .division-tag {
+    margin: 0 0 0.5rem 0;
+    color: var(--link-color);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .division-name {
+    margin: 0 0 0.75rem 0;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 28px;
+    letter-spacing: -1px;
+    line-height: 1.3;
+  }
+
+  .contact-email {
     margin: 0;
-  }
-
-  .wip-content {
-    text-align: center;
-    padding: 40px 20px;
-    max-width: 600px;
-  }
-
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: #F4F7ED;
-  }
-
-  p {
-    font-size: 1.2rem;
-    color: #F4F7ED;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-
-  .back-link {
-    display: inline-block;
-    background-color: var(--btn-color);
-    color: var(--btn-text);
-    padding: 12px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: opacity 0.3s ease;
-  }
-
-  .back-link:hover {
+    color: var(--text-color);
+    font-size: 14px;
+    line-height: 1.5;
     opacity: 0.8;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+  }
+
+  .contact-email:hover {
+    color: var(--link-color);
+    opacity: 1;
   }
 
   @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
+    .contact-card {
+      max-width: 90%;
     }
 
-    p {
-      font-size: 1rem;
+    .content {
+      padding: 1.5rem;
+      justify-content: flex-start;
     }
 
-    .wip-content {
-      padding: 30px 15px;
+    .division-tag {
+      font-size: 12px;
+    }
+
+    .division-name {
+      font-size: 22px;
+    }
+
+    .contact-email {
+      font-size: 14px;
     }
   }
 </style>

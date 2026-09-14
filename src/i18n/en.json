@@ -48,9 +48,13 @@
     "backToHome": "Back to Home"
   },
   "contacts": {
-    "comingSoon": "Coming Soon",
-    "underConstruction": "This page is currently under construction. Check back soon!",
-    "backToHome": "Back to Home"
+    "title": "Contact us",
+    "divisions": {
+      "generic": "Team Policumbent",
+      "teamLeader": "Team Leader",
+      "logistics": "Logistics & Supply Chain Division",
+      "prMedia": "PR & Media Division"
+    }
   },
   "partners": {
     "title": "Partners & Sponsors",
